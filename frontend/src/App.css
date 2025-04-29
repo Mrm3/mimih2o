@@ -1,0 +1,28 @@
+.layout {
+  min-height: 100vh;
+}
+
+.site-layout-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+  margin-top: 24px;
+}
+
+.ant-layout-header {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ant-table-wrapper {
+  margin-top: 24px;
+}
+
+.ant-space {
+  width: 100%;
+}
+
+.ant-upload {
+  margin-left: 16px;
+} 
