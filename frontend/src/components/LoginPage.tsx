@@ -9,7 +9,7 @@ const LoginPage: React.FC = () => {
 
   const onFinish = async (values: { username: string; password: string }) => {
     try {
-      const response = await axios.post('http://localhost:8000/token', {
+      const response = await axios.post('https://www.mimih2o.top/token', {
         username: values.username,
         password: values.password,
       }, {

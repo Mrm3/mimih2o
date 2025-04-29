@@ -9,7 +9,7 @@ const { Search } = Input;
 const { TabPane } = Tabs;
 
 // 设置axios默认配置
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'https://www.mimih2o.top';
 
 // 添加请求拦截器
 axios.interceptors.request.use(
@@ -79,7 +79,7 @@ const SearchPage: React.FC = () => {
   const fetchDataDate = async () => {
     try {
       console.log('开始获取数据日期');
-      const response = await axios.get('http://localhost:8000/api/data-date');
+      const response = await axios.get('https://www.mimih2o.top/api/data-date');
       console.log('获取数据日期响应:', response.data);
       if (response.data && response.data.date) {
         console.log('设置数据日期为:', response.data.date);
@@ -109,7 +109,7 @@ const SearchPage: React.FC = () => {
   // 处理登录
   const handleLogin = async (values: { username: string; password: string }) => {
     try {
-      const response = await axios.post('/api/login/', values);
+      const response = await axios.post('https://www.mimih2o.top/api/login/', values);
       localStorage.setItem('token', response.data.token);
       setIsLoggedIn(true);
       setIsAdmin(response.data.is_admin || false);
@@ -134,7 +134,7 @@ const SearchPage: React.FC = () => {
       const formData = new FormData();
       formData.append('file', file);
       
-      const response = await axios.post('/api/upload/', formData);
+      const response = await axios.post('https://www.mimih2o.top/api/upload/', formData);
       message.success('文件上传成功');
       
       // 更新数据日期
@@ -221,7 +221,7 @@ const SearchPage: React.FC = () => {
 
       // 先获取所有数据
       const allDataParams = { ...params, page_size: 1000 }; // 设置一个足够大的页面大小以获取所有数据
-      const allDataResponse = await axios.get(`http://localhost:8000/api/merchants/`, { params: allDataParams });
+      const allDataResponse = await axios.get('https://www.mimih2o.top/api/merchants/', { params: allDataParams });
       const allData = allDataResponse.data as ApiResponse;
       
       // 保存所有查询结果
